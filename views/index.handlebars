@@ -1,0 +1,36 @@
+<div>
+    <link rel="stylesheet" href="../public/assets/img/256-256-8a98392e8674eb71887ee57b861dd1c0-Burger.png">
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md" id="newbrg">
+            {{#each burgers}}
+                {{#unless devoured}}
+                    {{> burgers/burger-block eaten=true}}
+                {{/unless}}
+            {{/each}}
+
+            {{name}}
+            <button class="eat" data-id="{{id}}" data-eat="{{eaten}}">
+                {{#if eaten}}Devour it!{{/if}}
+            </button>
+        </div>
+        <div class="col-md" id="eatenbrg">
+            {{#each burgers}}
+                {{#unless devoured}}
+                    {{> burgers/burger-block eaten=false}}
+                {{/unless}}
+            {{/each}}
+        </div>
+    </div>
+</div>
+
+
+<form class="create-form">
+    <div class="form-group">
+        <input type="text" id="brg" name="name">
+    </div>
+    <button type="submit">Submit</button>
+    <h6>Enter a burger you want to eat. Click the "Submit" button.</h6>
+</form>
