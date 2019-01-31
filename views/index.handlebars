@@ -7,7 +7,7 @@
         <div class="col-md" id="newbrg">
             {{#each burgers}}
                 {{#unless devoured}}
-                    {{> burgers/burger-block eaten=true}}
+                    {{> eaten=true}}
                 {{/unless}}
             {{/each}}
 
@@ -19,7 +19,7 @@
         <div class="col-md" id="eatenbrg">
             {{#each burgers}}
                 {{#unless devoured}}
-                    {{> burgers/burger-block eaten=false}}
+                    {{> eaten=false}}
                 {{/unless}}
             {{/each}}
         </div>
