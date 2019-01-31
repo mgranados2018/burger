@@ -1,11 +1,11 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function() {
-  $(".eat").on("click", function(event) {
+  $(".change-burgerstate").on("click", function(event) {
     var id = $(this).data("id");
     var newEatenBurger = $(this).data("newEatenBurger");
 
     var newBurgerState = {
-      eaten: newEatenBurger
+      devoured: newEatenBurger
     };
 
     // Send the PUT request.
@@ -27,6 +27,7 @@ $(function() {
 
     var newBurger = {
       name: $("#brg").val().trim(),
+      devoured: 0
     };
 
     // Send the POST request.
