@@ -3,27 +3,28 @@
     <div class="row">
         <div class="col-md" id="newbrg">
             {{#each burgers}}
-            {{#unless devoured}}
-                {{!-- {{> burgers/main devoured=true}} --}}
-            {{/unless}}
-            {{/each}}
-            <button class="change-burgerstate" data-id="{{id}}" data-newEatenBurger="{{devoured}}">
+                {{#unless devoured}}
+                <div>{{this.id}}{{this.burger_name}} </div>
+                 {{/unless}}
+                <button class="change-burgerstate" data-id="{{id}}" data-newEatenBurger="{{devoured}}"></button>
                 {{#if devoured}}Devour it!{{/if}}
+            {{/each}}
+
             </button>
         </div>
 
         <div class="col-md" id="eatenbrg">
             {{#each burgers}}
-            {{#unless devoured}}
-                {{!-- {{> burgers/main devoured=true}} --}}
-            {{/unless}}
+            {{#if devoured}}
+                <div>{{this.id}}{{this.burger_name}} </div>
+            {{/if}}
             {{/each}}
         </div>
     </div>
 </div>
 
 
-<form class="create-form">
+<form class="create-form" method="POST" action="/api/burgers">
     <div class="form-group">
         <label for="brg">Burger Name</label>
         <input type="text" id="brg" name="burger_name">
