@@ -1,19 +1,18 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md" id="newbrg">
+        <div class="col-md-6" id="newbrg">
             {{#each burgers}}
                 {{#unless devoured}}
-                <div>{{this.id}}{{this.burger_name}} </div>
-                 {{/unless}}
-                <button class="change-burgerstate" data-id="{{id}}" data-newEatenBurger="{{devoured}}"></button>
-                {{#if devoured}}Devour it!{{/if}}
+                    Devour it! {{> burgers/burger-block}}
+                {{/unless}}
+        
             {{/each}}
 
             </button>
         </div>
 
-        <div class="col-md" id="eatenbrg">
+        <div class="col-md-6" id="eatenbrg">
             {{#each burgers}}
             {{#if devoured}}
                 <div>{{this.id}}{{this.burger_name}} </div>
@@ -21,8 +20,6 @@
             {{/each}}
         </div>
     </div>
-</div>
-
 
 <form class="create-form" method="POST" action="/api/burgers">
     <div class="form-group">
@@ -32,3 +29,7 @@
     <button type="submit">Submit</button>
     <h6>Enter a burger you want to eat. Click the "Submit" button.</h6>
 </form>
+
+</div>
+
+
