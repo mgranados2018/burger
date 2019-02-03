@@ -4,12 +4,9 @@
         <div class="col-md-6" id="newbrg">
             {{#each burgers}}
                 {{#unless devoured}}
-                    Devour it! {{> burgers/burger-block}}
+                  {{> burgers/burger-block}}
                 {{/unless}}
-        
-            {{/each}}
-
-            </button>
+           {{/each}}
         </div>
 
         <div class="col-md-6" id="eatenbrg">
@@ -26,7 +23,7 @@
         <label for="brg">Burger Name</label>
         <input type="text" id="brg" name="burger_name">
     </div>
-    <button type="submit">Submit</button>
+    <button type="submit" class="btn btn-primary">Submit</button>
     <h6>Enter a burger you want to eat. Click the "Submit" button.</h6>
 </form>
 
